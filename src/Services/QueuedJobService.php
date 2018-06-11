@@ -266,6 +266,8 @@ class QueuedJobService
             }
         }
 
+        $this->extend('updateJobDataFromDescriptor', $jobDescriptor, $jobData);
+
         $job->setJobData(
             $jobDescriptor->TotalSteps,
             $jobDescriptor->StepsProcessed,
